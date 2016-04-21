@@ -10,14 +10,20 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+//Admin side
 Route::group(['prefix' => 'admin'], function () {
 	Route::get('/login/', ['as' => 'admin-login',
 			'uses' => 'admin\IndexController@getLogin']);
 	Route::post('/login/', ['as' => 'admin-login-post',
 			'uses' => 'admin\IndexController@postLogin']);
+	
+	//Need to login
 	Route::group(['middleware' => 'auth'], function () {
 		Route::get('/', ['as' => 'admin-top',
 				'uses' => 'admin\IndexController@index']);
+		Route::get('/products', ['as' => 'admin-product-top',
+				'uses' => 'admin\ProductController@index']);
 	});
 });
 
