@@ -27,11 +27,11 @@ Route::group(['prefix' => 'admin'], function () {
 	});
 });
 
+//Front side
 
-Route::get('/', function()
-{
-	return View::make('home');
-});
+//Index
+Route::get('/', ['as' => 'front-top',
+				'uses' => 'front\IndexController@index']);
 
 Route::get('/charts', function()
 {
