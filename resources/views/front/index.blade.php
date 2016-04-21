@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Squadfree - Free bootstrap 3 one page template</title>
+    <title>Hùng Đại Dương Co.,LTD</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset("front/index/css/bootstrap.min.css")}}" rel="stylesheet" type="text/css">
