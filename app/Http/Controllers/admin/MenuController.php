@@ -2,7 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Menu;
+use App\Http\Requests\MenuRequest;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller {
@@ -14,7 +15,9 @@ class MenuController extends Controller {
 	 */
 	public function index()
 	{
-		//
+            $menu=new Menu;
+            $menus=$menu->all();            
+            return view("admin.menulists")->with("menus",$menus);
 	}
 
 	/**
@@ -22,9 +25,34 @@ class MenuController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+        public function beforeCreate()
+        {
+            return view('admin.menucreate')->with('success',false);
+        }
+        
+        public function insertLocation() // get max location 
+        {
+            $menus= Menu::all();
+            
+            if($menus->count()==0)
+            {
+                return 1;
+            }else
+            {
+                return $menus->max('location')+1; 
+            }
+        }
+
+	public function create(MenuRequest $request)
 	{
-		//
+                    
+                    $requests=$request->all();
+                    $menu=new Menu;
+                    $menu->name=addslashes($requests['name']);
+                    $menu->description=  addslashes($requests['description']);
+                    $menu->location = $this->insertLocation();
+                    $menu->save();
+                    return view('admin.menucreate')->with('success',true);      
 	}
 
 	/**
@@ -32,6 +60,9 @@ class MenuController extends Controller {
 	 *
 	 * @return Response
 	 */
+        
+        
+        
 	public function store()
 	{
 		//
@@ -45,7 +76,7 @@ class MenuController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		
 	}
 
 	/**
@@ -54,22 +85,47 @@ class MenuController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+        
+
 	public function edit($id)
 	{
-		//
+            $menu=new Menu;
+            $menuedit=$menu->find($id);
+            return view("admin.menuedit")->with('menu',$menuedit);
 	}
-
+        
 	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(MenuRequest $request)
 	{
-		//
+            try {
+                
+                $requests=$request->all();
+                if($requests)
+                {
+                    $menu=Menu::find($requests['id']);
+                    $menu->name=addslashes($requests['name']);
+                    $menu->description=addslashes($requests['description']);
+                    $menu->update();
+                    return redirect()->route('admin-menu-index')->with("successedit",true);
+                }else
+                {                 
+                    return redirect()->route('admin-menu-index');
+                }
+            } catch (Exception $ex) {
+                return redirect()->route('admin-menu-index');
+            }          
 	}
-
+        public function delete($id)
+        {
+            $menu= Menu::find($id);
+            $menu->delete();
+            return redirect()->route('admin-menu-index')->with("successdelete",true);
+        }
 	/**
 	 * Remove the specified resource from storage.
 	 *

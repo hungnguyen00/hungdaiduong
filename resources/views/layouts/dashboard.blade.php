@@ -42,6 +42,10 @@
                             <a href="{{ url ('admin/products') }}"><i class="fa fa-book fa-fw"></i> Quản lý sản phẩm</a>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li {{ (Request::is('*admin/menu') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('admin/menu') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý Menu</a>
+                            <!-- /.nav-second-level -->
+                        </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                             <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->

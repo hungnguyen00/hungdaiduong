@@ -24,6 +24,18 @@ Route::group(['prefix' => 'admin'], function () {
 				'uses' => 'admin\IndexController@index']);
 		Route::get('/products', ['as' => 'admin-product-top',
 				'uses' => 'admin\ProductController@index']);
+                Route::get('/menu', ['as' => 'admin-menu-index',
+				'uses' => 'admin\MenuController@index']);
+                Route::get('/menu/create', ['as' => 'admin-menu-create-get',
+				'uses' => 'admin\MenuController@beforeCreate']);
+                Route::post('/menu/create', ['as' => 'admin-menu-create-post',
+				'uses' => 'admin\MenuController@create']);
+                Route::get('/menu/edit/{id}', ['as' => 'admin-menu-bofore-edit',
+				'uses' => 'admin\MenuController@edit']);
+                 Route::post('/menu/edit', ['as' => 'admin-menu-edit',
+				'uses' => 'admin\MenuController@update']);
+                Route::get('/menu/delete/{id}', ['as' => 'admin-menu-delete',
+				'uses' => 'admin\MenuController@delete']);            
 	});
 });
 
