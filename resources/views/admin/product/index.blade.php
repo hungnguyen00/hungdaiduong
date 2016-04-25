@@ -3,6 +3,11 @@
 
 @section('section')
 <div class="col-sm-12">
+<div class="m-b-20 clearfix">
+                 <div class="pull-right">
+                    <a href="{{url('/admin/products/edit')}}" class="btn btn-success m-t-10"><i class="fa fa-plus p-r-10"></i> Thêm mới sản phẩm</a>
+                </div>
+            </div>
 <div class="row">
     <div class="col-sm-6">
         <div class="dataTables_length" id="example1_length">
@@ -35,21 +40,21 @@
 					<td>John</td>
 					<td>john@gmail.com</td>
 					<td>London, UK</td>
-					<td><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></td>
+					<td><a href="{{ url ('admin/products/edit/1') }}"><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></a></td>
 					<td><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></td>
 				</tr>
 				<tr>
 					<td>Andy</td>
 					<td>andygmail.com</td>
 					<td>Merseyside, UK</td>
-					<td><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></td>
+					<td><a href="{{ url ('admin/products/edit/2') }}"><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></a></td>
 					<td><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></td>
 				</tr>
 				<tr>
 					<td>Frank</td>
 					<td>frank@gmail.com</td>
 					<td>Southampton, UK</td>
-					<td><a href="{{ url ('admin/products/edit/') }}"><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></a></td>
+					<td><a href="{{ url ('admin/products/edit/3') }}"><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></a></td>
 					<td><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></td>
 				</tr>
 			</tbody>
