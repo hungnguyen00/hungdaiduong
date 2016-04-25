@@ -16,4 +16,8 @@ class ProductController extends Controller {
 	{
 		return \View::make('admin/product/index');
 	}
+	public function getProductEdit()
+	{
+		return \View::make('admin/product/product_edit');
+	}
 }

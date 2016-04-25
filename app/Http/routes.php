@@ -49,8 +49,8 @@ Route::get('/', ['as' => 'front-top',
 Route::group(['prefix' => 'product'], function () {
     Route::get('/list', ['as' => 'product-list',
         'uses' => 'front\ProductController@getList']);
-    Route::get('/detail', ['as' => 'product-detail',
-        'uses' => 'front\ProductController@getDetail/{id}']);
+    Route::get('/detail/{id}', ['as' => 'product-detail',
+        'uses' => 'front\ProductController@getDetail']);
 });
 
 Route::get('/charts', function()

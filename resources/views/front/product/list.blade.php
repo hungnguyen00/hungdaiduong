@@ -147,7 +147,7 @@
                                                     <div class="products grid-v1">
                                                         <div class="product">
                                                             <div class="product-image">
-                                                                <a href="{{ url('/product/detail/') }}" data-lightbox="image-1">
+                                                                <a href="{{ url('/product/detail') }}/<?php echo $i;?>" data-lightbox="image-1">
                                                                     <div class="image"> <img src="{{ asset('/front/images/products') }}/<?php echo $i;?>.jpg" class="img-responsive" alt=""> </div>
                                                                     <div class="tag">
                                                                         <div class="tag-text new">new</div>
@@ -156,16 +156,16 @@
                                                                 </a>
                                                             </div>
                                                             <div class="product-info">
-                                                                <h3 class="name"><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=details-v1">Product name <?php echo $i;?></a></h3>
+                                                                <h3 class="name"><a href="{{ url('/product/detail') }}/<?php echo $i;?>">Product name <?php echo $i;?></a></h3>
                                                                 <div class="star-rating" title="Rated 4.50 out of 5"> <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span> </div>
                                                                 <div class="product-price"> <ins> <span class="amount">$ 369.99</span> </ins> <del><span class="amount">$ 400.99</span></del> </div>
                                                             </div>
                                                             <div class="cart animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
-                                                                        <li class="add-cart-button"> <a class="btn btn-primary" href="http://demo2.transvelo.in/html/rimbus/index.php?page=details-v1">Add to cart</a> </li>
-                                                                        <li> <a class="btn btn-primary whislist" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                                                        <li> <a class="btn btn-primary compare" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#" title="Compare"> <i class="fa fa-exchange"></i> </a> </li>
+                                                                        <li class="add-cart-button"> <a class="btn btn-primary" href="#">Add to cart</a> </li>
+                                                                        <li> <a class="btn btn-primary whislist" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                        <li> <a class="btn btn-primary compare" href="#" title="Compare"> <i class="fa fa-exchange"></i> </a> </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -193,7 +193,7 @@
                                                         </div>
                                                         <div class="col-md-9 col-sm-8 col-xs-12">
                                                             <div class="product-info">
-                                                                <h3 class="name"><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=details-v1">Product name <?php echo $i;?></a></h3>
+                                                                <h3 class="name"><a href="{{ url('/product/detail') }}/<?php echo $i;?>">Product name <?php echo $i;?></a></h3>
                                                                 <div class="star-rating" title="Rated 4.50 out of 5"> <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span> </div>
                                                                 <div class="product-price"> <ins> <span class="amount">$ 369.99</span> </ins> <del><span class="amount">$ 400.99</span></del> </div>
                                                                 <div class="product-short-desc">
@@ -203,9 +203,9 @@
                                                             <div class="cart animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
-                                                                        <li class="add-cart-button"> <a class="btn btn-primary" href="http://demo2.transvelo.in/html/rimbus/index.php?page=details-v1">Add to cart</a> </li>
-                                                                        <li> <a class="btn btn-primary whislist" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                                                        <li> <a class="btn btn-primary compare" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#" title="Compare"> <i class="fa fa-exchange"></i> </a> </li>
+                                                                        <li class="add-cart-button"> <a class="btn btn-primary" href="#">Add to cart</a> </li>
+                                                                        <li> <a class="btn btn-primary whislist" href="#" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                                                        <li> <a class="btn btn-primary compare" href="#" title="Compare"> <i class="fa fa-exchange"></i> </a> </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>

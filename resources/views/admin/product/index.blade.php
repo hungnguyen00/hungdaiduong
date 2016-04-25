@@ -49,7 +49,7 @@
 					<td>Frank</td>
 					<td>frank@gmail.com</td>
 					<td>Southampton, UK</td>
-					<td><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></td>
+					<td><a href="{{ url ('admin/products/edit/') }}"><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button></a></td>
 					<td><button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button></td>
 				</tr>
 			</tbody>

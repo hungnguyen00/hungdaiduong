@@ -24,7 +24,7 @@ class ProductController extends Controller {
 	 */
 	public function getDetail($id)
 	{
-		echo $id;
+		return \View::make('front/product/detail');
 	}
 
 	/**
