@@ -1,80 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Hùng Đại Dương Co.,LTD</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ asset("front/index/css/bootstrap.min.css")}}" rel="stylesheet" type="text/css">
-
-    <!-- Fonts -->
-    <link href="{{ asset("front/index/font-awesome/css/font-awesome.min.css")}}" rel="stylesheet" type="text/css">
-	<link href="{{ asset("front/index/css/animate.css")}}" rel="stylesheet" />
-    <!-- Squad theme CSS -->
-    <link href="{{ asset("front/index/css/style.css")}}" rel="stylesheet">
-	<link href="{{ asset("front/index/color/default.css")}}" rel="stylesheet">
-
-</head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-	<!-- Preloader -->
-	<div id="preloader">
-	  <div id="load"></div>
-	</div>
-
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <h1>HÙNG ĐẠI DƯƠNG</h1>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#intro">Trang Chủ</a></li>
-        <li><a href="#about">Giới Thiệu</a></li>
-		<li><a href="#service">Dịch Vụ</a></li>
-		<li><a href="#contact">Liên Hệ</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Cá Khô</a></li>
-            <li><a href="#">Cá Tươi</a></li>
-            <li><a href="#">Mực - Tôm</a></li>
-          </ul>
-        </li>
-      </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-	<!-- Section: intro -->
-    <section id="intro" class="intro">
-	
-		<div class="slogan">
-			<h4>Công Ty TNHH Thương Mại & Sản Xuất</h4>
-			<h2>HÙNG ĐẠI DƯƠNG</h2>
-		</div>
-		<div class="page-scroll">
-			<a href="#service" class="btn btn-circle">
-				<i class="fa fa-angle-double-down animated"></i>
-			</a>
-		</div>
-    </section>
-	<!-- /Section: intro -->
-
+@extends('front.layout.main')
+@section('script_extend')
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+<script>
+//GoogleMaps start
+$( document ).ready(function() {
+	initMap();
+});
+function initMap() {
+    var mapDiv = document.getElementById('google-map');
+    var map = new google.maps.Map(mapDiv, {
+      center: {lat: 10.7717778, lng: 106.6868165},
+      zoom: 17,
+		scrollwheel: false,
+    });
+    var marker = new google.maps.Marker({
+        position: {lat: 10.7717778, lng: 106.6868165},
+        map: map,
+        title: 'Hùng Đại Dương'
+      });
+}
+//GoogleMaps end
+</script>
+@endsection
+@section('content')
 	<!-- Section: about -->
     <section id="about" class="home-section text-center">
 		<div class="heading-about">
@@ -342,38 +290,4 @@
 	</section>
 	<!-- /Section: contact -->
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="wow shake" data-wow-delay="0.4s">
-					<div class="page-scroll marginbot-30">
-						<a href="#intro" id="totop" class="btn btn-circle">
-							<i class="fa fa-angle-double-up animated"></i>
-						</a>
-					</div>
-					</div>
-					<p>&copy;Copyright 2014 - Hung Ocean Co.,LTD. Designed by <a href="mailto:nthung0209@gmail.com">HERO</a></p>
-                    <!-- 
-                        All links in the footer should remain intact. 
-                        Licenseing information is available at: http://bootstraptaste.com/license/
-                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Squadfree
-                    -->
-				</div>
-			</div>	
-		</div>
-	</footer>
-
-    <!-- Core JavaScript Files -->
-    <script src="{{ asset("front/index/js/jquery.min.js") }}"></script>
-    <script src="{{ asset("front/index/js/bootstrap.min.js") }}"></script>
-    <script src="{{ asset("front/index/js/jquery.easing.min.js") }}"></script>	
-	<script src="{{ asset("front/index/js/jquery.scrollTo.js") }}"></script>
-	<script src="{{ asset("front/index/js/wow.min.js") }}"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="{{ asset("front/index/js/custom.js") }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-
-</body>
-
-</html>
+@endsection

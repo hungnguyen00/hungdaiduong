@@ -45,6 +45,14 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', ['as' => 'front-top',
 				'uses' => 'front\IndexController@index']);
 
+//product
+Route::group(['prefix' => 'product'], function () {
+    Route::get('/list', ['as' => 'product-list',
+        'uses' => 'front\ProductController@getList']);
+    Route::get('/detail', ['as' => 'product-detail',
+        'uses' => 'front\ProductController@getDetail/{id}']);
+});
+
 Route::get('/charts', function()
 {
 	return View::make('mcharts');

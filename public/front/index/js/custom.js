@@ -34,23 +34,4 @@
 			event.preventDefault();
 		});
 	});
-
-	// add googlemaps to index page
-	initMap();
-	
 })(jQuery);
-//GoogleMaps start
-function initMap() {
-    var mapDiv = document.getElementById('google-map');
-    var map = new google.maps.Map(mapDiv, {
-      center: {lat: 10.7717778, lng: 106.6868165},
-      zoom: 17,
-		scrollwheel: false,
-    });
-    var marker = new google.maps.Marker({
-        position: {lat: 10.7717778, lng: 106.6868165},
-        map: map,
-        title: 'Hùng Đại Dương'
-      });
-}
-//GoogleMaps end
