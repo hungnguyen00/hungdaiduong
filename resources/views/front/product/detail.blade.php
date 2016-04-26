@@ -36,22 +36,7 @@
             <div class="body-content details-v1">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 sidebar wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
-                            <h3 class="section-title">danh mục sản phẩm</h3>
-                            <div class="sidebar-filter">
-                                <div class="manufacture">
-                                    <ul>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">Women <span class="item-count">(22)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">men <span class="item-count">(45)</span></a></li>
-                                        <li><a class="active" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">kids <span class="item-count">(29)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">accessories <span class="item-count">(41)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">dress <span class="item-count">(58)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">Shoes <span class="item-count">(79)</span></a></li>
-                                    </ul>
-                                </div>
-                                
-                            </div>
-                        </div>
+                        @include('front.layout.product_category')
                         <div class="col-md-9 details-page">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">

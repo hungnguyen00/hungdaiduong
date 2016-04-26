@@ -60,6 +60,14 @@ Route::group(['prefix' => 'product'], function () {
         'uses' => 'front\ProductController@getDetail']);
 });
 
+//News
+Route::group(['prefix' => 'news'], function () {
+    Route::get('/list', ['as' => 'news-list',
+    'uses' => 'front\NewsController@getList']);
+    Route::get('/detail/{id}', ['as' => 'news-detail',
+    'uses' => 'front\NewsController@getDetail']);
+});
+
 Route::get('/charts', function()
 {
 	return View::make('mcharts');

@@ -11,10 +11,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#intro">Trang Chủ</a></li>
+                <li class="active"><a href="{{url('/')}}">Trang Chủ</a></li>
                 <li><a href="#about">Giới Thiệu</a></li>
                 <li><a href="#service">Dịch Vụ</a></li>
                 <li><a href="#contact">Liên Hệ</a></li>
+                <li><a href="{{url('news/list')}}">Tin tức</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="caret"></b></a>
                     <ul class="dropdown-menu">

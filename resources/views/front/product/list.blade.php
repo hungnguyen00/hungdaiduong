@@ -44,7 +44,6 @@
             </div>
             <div class="pace-activity"></div>
         </div>
-        <noscript>&lt;meta HTTP-EQUIV="refresh" content="0;url='http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1&amp;amp;PageSpeed=noscript'" /&gt;&lt;style&gt;&lt;!--table,div,span,font,p{display:none} --&gt;&lt;/style&gt;&lt;div style="display:block"&gt;Please click &lt;a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1&amp;amp;PageSpeed=noscript"&gt;here&lt;/a&gt; if you are not redirected within a few seconds.&lt;/div&gt;</noscript>
         <div id="wrapper" class="rimbus">
             
             <div class="body-content outer-top-xs">
@@ -52,7 +51,7 @@
                     <div class="container">
                         <div class="breadcrumb-inner">
                             <ul class="list-inline list-unstyled">
-                                <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">Home</a></li>
+                                <li><a href="{{url('/')}}">Trang chủ</a></li>
                                 <li class="active">Women's</li>
                             </ul>
                         </div>
@@ -60,24 +59,7 @@
                 </div>
                 <div class="container">
                     <div class="row category-v1 outer-bottom-sm">
-                        <div class="col-md-3 col-sm-12 sidebar">
-                            
-                            <h3 class="section-title">Danh mục sản phẩm</h3>
-                            <div class="sidebar-filter">
-                                <div class="manufacture">
-                                    <ul>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">Women <span class="item-count">(22)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">men <span class="item-count">(45)</span></a></li>
-                                        <li><a class="active" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">kids <span class="item-count">(29)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">accessories <span class="item-count">(41)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">dress <span class="item-count">(58)</span></a></li>
-                                        <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">Shoes <span class="item-count">(79)</span></a></li>
-                                    </ul>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
+                        @include('front.layout.product_category')
                         <div class=" col-md-9 col-sm-12 outer-bottom-sm">
                             <div class="clearfix"></div>
                             <div id="category" class="gird-v1-banner wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
@@ -90,9 +72,9 @@
                                     <div class="col-sm-3 col-md-3">
                                         <div class="product-item-view">
                                             <ul class="nav nav-tabs">
-                                                <li><span>View as:</span></li>
-                                                <li class="active"><a data-toggle="tab" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#grid-container"><i class="icon fa fa-th"></i></a></li>
-                                                <li><a data-toggle="tab" href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#list-container"><i class="icon fa fa-th-list"></i></a></li>
+                                                <li><span>Kiểu xem:</span></li>
+                                                <li class="active"><a data-toggle="tab" href="#grid-container"><i class="icon fa fa-th"></i></a></li>
+                                                <li><a data-toggle="tab" href="#list-container"><i class="icon fa fa-th-list"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -100,26 +82,23 @@
                                         <div class="custom-select">
                                             <ul class="list-unstyled">
                                                 <li class="short-by">
-                                                    <label>Sort by:</label> 
+                                                    <label>Sắp xếp theo:</label> 
                                                     <select class="styled hasCustomSelect" style="-webkit-appearance: menulist-button; width: 87px; position: absolute; opacity: 0; height: 29px; font-size: 12px;">
-                                                        <option>Position</option>
-                                                        <option>Low</option>
-                                                        <option>High</option>
-                                                        <option>A to Z</option>
+                                                        <option>Ngày đăng</option>
+                                                        <option>Giá thấp dần</option>
+                                                        <option>Giá tăng dần</option>
+                                                        <option>A đến Z</option>
                                                     </select>
-                                                    <span class="customSelect styled" style="display: inline-block;"><span class="customSelectInner" style="width: 50px; display: inline-block;">Position</span></span> 
+                                                    <span class="customSelect styled" style="display: inline-block;"><span class="customSelectInner" style="width: 50px; display: inline-block;">Ngày đăng</span></span> 
                                                 </li>
                                                 <li class="show-page">
-                                                    <label>Show:</label> 
+                                                    <label>Hiển thị:</label> 
                                                     <select class="styled hasCustomSelect" style="-webkit-appearance: menulist-button; width: 48px; position: absolute; opacity: 0; height: 29px; font-size: 12px;">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                        <option>6</option>
+                                                        <option>12</option>
+                                                        <option>24</option>
+                                                        <option>36</option>
                                                     </select>
-                                                    <span class="customSelect styled" style="display: inline-block;"><span class="customSelectInner" style="width: 7px; display: inline-block;">1</span></span> 
+                                                    <span class="customSelect styled" style="display: inline-block;"><span class="customSelectInner" style="width: 7px; display: inline-block;">12</span></span> 
                                                 </li>
                                             </ul>
                                         </div>
@@ -127,11 +106,11 @@
                                     <div class="col col-sm-4 col-md-3">
                                         <nav>
                                             <ul class="pagination">
-                                                <li> <a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#" class="prev" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-angle-left"></i></span> </a> </li>
-                                                <li class="active"><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">1</a></li>
-                                                <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">2</a></li>
-                                                <li><a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#">3</a></li>
-                                                <li> <a href="http://demo2.transvelo.in/html/rimbus/index.php?page=category-v1#" class="next" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-angle-right"></i></span> </a> </li>
+                                                <li> <a href="#" class="prev" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-angle-left"></i></span> </a> </li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li> <a href="#" class="next" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-angle-right"></i></span> </a> </li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -150,16 +129,17 @@
                                                                 <a href="{{ url('/product/detail') }}/<?php echo $i;?>" data-lightbox="image-1">
                                                                     <div class="image"> <img src="{{ asset('/front/images/products') }}/<?php echo $i;?>.jpg" class="img-responsive" alt=""> </div>
                                                                     <div class="tag">
-                                                                        <div class="tag-text new">new</div>
+                                                                        <div class="tag-text new">mới</div>
                                                                     </div>
                                                                     <div class="hover-effect"><i class="fa fa-search"></i></div>
                                                                 </a>
                                                             </div>
                                                             <div class="product-info">
-                                                                <h3 class="name"><a href="{{ url('/product/detail') }}/<?php echo $i;?>">Product name <?php echo $i;?></a></h3>
-                                                                <div class="star-rating" title="Rated 4.50 out of 5"> <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span> </div>
-                                                                <div class="product-price"> <ins> <span class="amount">$ 369.99</span> </ins> <del><span class="amount">$ 400.99</span></del> </div>
+                                                                <h3 class="name"><a href="{{ url('/product/detail') }}/<?php echo $i;?>">Sản phẩm <?php echo $i;?></a></h3>
+                                                                <!-- <div class="star-rating" title="Rated 4.50 out of 5"> <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span> </div> -->
+                                                                <div class="product-price"> <ins> <span class="amount">500.000</span> </ins> <del><span class="amount">650.000</span></del> </div>
                                                             </div>
+                                                            <!-- 
                                                             <div class="cart animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
@@ -168,7 +148,7 @@
                                                                         <li> <a class="btn btn-primary compare" href="#" title="Compare"> <i class="fa fa-exchange"></i> </a> </li>
                                                                     </ul>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -193,14 +173,14 @@
                                                         </div>
                                                         <div class="col-md-9 col-sm-8 col-xs-12">
                                                             <div class="product-info">
-                                                                <h3 class="name"><a href="{{ url('/product/detail') }}/<?php echo $i;?>">Product name <?php echo $i;?></a></h3>
-                                                                <div class="star-rating" title="Rated 4.50 out of 5"> <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span> </div>
-                                                                <div class="product-price"> <ins> <span class="amount">$ 369.99</span> </ins> <del><span class="amount">$ 400.99</span></del> </div>
+                                                                <h3 class="name"><a href="{{ url('/product/detail') }}/<?php echo $i;?>">Sản phẩm <?php echo $i;?></a></h3>
+                                                                <!-- <div class="star-rating" title="Rated 4.50 out of 5"> <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span> </div> -->
+                                                                <div class="product-price"> <ins> <span class="amount">500.000</span> </ins> <del><span class="amount">650.000</span></del> </div>
                                                                 <div class="product-short-desc">
                                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo re et dolore magna aliqua. Ut enim ad minim venia. Lorem ipsum dolor sit amet, conse ctetur adi piscing elit send do eiusmod later. Lorem ipsum dolor sit amet, consectetur adipiscing end.</p>
                                                                 </div>
                                                             </div>
-                                                            <div class="cart animate-effect">
+                                                            <!-- <div class="cart animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
                                                                         <li class="add-cart-button"> <a class="btn btn-primary" href="#">Add to cart</a> </li>
@@ -208,7 +188,7 @@
                                                                         <li> <a class="btn btn-primary compare" href="#" title="Compare"> <i class="fa fa-exchange"></i> </a> </li>
                                                                     </ul>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                     </div>
                                                 </div>
