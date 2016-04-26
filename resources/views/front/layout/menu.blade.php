@@ -19,8 +19,16 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{url('product/list')}}">Cá Khô</a></li>
-                        <li><a href="#">Cá Tươi</a></li>
-                        <li><a href="#">Mực - Tôm</a></li>
+                        <li><a href="{{url('product/list')}}">Cá Tươi</a></li>
+                        <li><a href="{{url('product/list')}}">Mực - Tôm</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ngôn ngữ <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><img src="{{asset('front/images/icon')}}/vn_flg.png"  style="width: 30px; height: 20px;"/> Việt</a></li>
+                        <li><a href="#"><img src="{{asset('front/images/icon')}}/en_flg.jpg"  style="width: 30px; height: 20px;"/> Anh</a></li>
                     </ul>
                 </li>
             </ul>
