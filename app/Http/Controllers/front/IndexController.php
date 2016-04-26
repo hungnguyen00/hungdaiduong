@@ -16,5 +16,15 @@ class IndexController extends Controller {
 	{
 		return \View::make('front/index');
 	}
+	
+	public function getAbout()
+	{
+		return \View::make('front/about/index');
+	}
+	
+	public function getService()
+	{
+		return \View::make('front/service/index');
+	}
 
 }

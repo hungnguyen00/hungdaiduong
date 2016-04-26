@@ -52,6 +52,14 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', ['as' => 'front-top',
 				'uses' => 'front\IndexController@index']);
 
+//About
+Route::get('/about', ['as' => 'about-index',
+		'uses' => 'front\IndexController@getAbout']);
+
+//Service
+Route::get('/service', ['as' => 'service-index',
+		'uses' => 'front\IndexController@getService']);
+
 //product
 Route::group(['prefix' => 'product'], function () {
     Route::get('/list', ['as' => 'product-list',
@@ -66,6 +74,14 @@ Route::group(['prefix' => 'news'], function () {
     'uses' => 'front\NewsController@getList']);
     Route::get('/detail/{id}', ['as' => 'news-detail',
     'uses' => 'front\NewsController@getDetail']);
+});
+
+//Contact
+Route::group(['prefix' => 'contact'], function () {
+	Route::get('/', ['as' => 'contact-index',
+			'uses' => 'front\ContactController@getContact']);
+	Route::post('/', ['as' => 'contact-complete',
+			'uses' => 'front\ContactController@postContact']);
 });
 
 Route::get('/charts', function()
