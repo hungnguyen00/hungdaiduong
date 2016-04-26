@@ -1,140 +1,99 @@
-<?php namespace App\Http\Controllers\admin;
+<?php
+
+namespace App\Http\Controllers\admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Menu;
+use AppMenu;
 use App\Http\Requests\MenuRequest;
 use Illuminate\Http\Request;
+use App\Menu;
 
 class MenuController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-            $menu=new Menu;
-            $menus=$menu->all();            
-            return view("admin.menulists")->with("menus",$menus);
+	public function getIndex()
+	{	
+		$items 	= Menu::orderBy('order')->get();
+		$menu 	= new Menu;
+		$menu   = $menu->getHTML($items);
+		return \View::make('admin.menu.index', array('items'=>$items,'menu'=>$menu));
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-        public function beforeCreate()
-        {
-            return view('admin.menucreate')->with('success',false);
-        }
-        
-        public function insertLocation() // get max location 
-        {
-            $menus= Menu::all();
-            
-            if($menus->count()==0)
-            {
-                return 1;
-            }else
-            {
-                return $menus->max('location')+1; 
-            }
-        }
-
-	public function create(MenuRequest $request)
-	{
-                    
-                    $requests=$request->all();
-                    $menu=new Menu;
-                    $menu->name=addslashes($requests['name']);
-                    $menu->description=  addslashes($requests['description']);
-                    $menu->location = $this->insertLocation();
-                    $menu->save();
-                    return view('admin.menucreate')->with('success',true);      
+	public function getEdit($id)
+	{	
+		$item = Menu::find($id);
+		return \View::make('admin.menu.edit', array('item'=>$item));
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-        
-        
-        
-	public function store()
-	{
-		//
+	public function postEdit($id)
+	{	
+		$item = Menu::find($id);
+		$item->label 	= e(\Input::get('label',''));	
+		$item->url 		= e(\Input::get('url',''));	
+
+		$item->save();
+		return $this->getIndex();
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		
+	// AJAX Reordering function
+	public function postIndex()
+	{	
+	    $source       = e(\Input::get('source'));
+	    $destination  = e(\Input::get('destination',0));
+
+	    $item             = Menu::find($source);
+	    $item->parent_id  = $destination;  
+	    $item->save();
+
+	    $ordering       = json_decode(\Input::get('order'));
+	    $rootOrdering   = json_decode(\Input::get('rootOrder'));
+
+	    if($ordering){
+	      foreach($ordering as $order=>$item_id){
+	        if($itemToOrder = Menu::find($item_id)){
+	            $itemToOrder->order = $order;
+	            $itemToOrder->save();
+	        }
+	      }
+	    } else {
+	      foreach($rootOrdering as $order=>$item_id){
+	        if($itemToOrder = Menu::find($item_id)){
+	            $itemToOrder->order = $order;
+	            $itemToOrder->save();
+	        }
+	      }
+	    }
+
+	    return 'ok ';
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-        
+	public function postNew()
+	{
+		// Create a new menu item and save it
+		$item = new Menu();
+		$item->label 	= e(\Input::get('label',''));	
+		$item->url 		= e(\Input::get('url',''));	
+		$item->order 	= Menu::max('order')+1;
 
-	public function edit($id)
-	{
-            $menu=new Menu;
-            $menuedit=$menu->find($id);
-            return view("admin.menuedit")->with('menu',$menuedit);
-	}
-        
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update(MenuRequest $request)
-	{
-            try {
-                
-                $requests=$request->all();
-                if($requests)
-                {
-                    $menu=Menu::find($requests['id']);
-                    $menu->name=addslashes($requests['name']);
-                    $menu->description=addslashes($requests['description']);
-                    $menu->update();
-                    return redirect()->route('admin-menu-index')->with("successedit",true);
-                }else
-                {                 
-                    return redirect()->route('admin-menu-index');
-                }
-            } catch (Exception $ex) {
-                return redirect()->route('admin-menu-index');
-            }          
-	}
-        public function delete($id)
-        {
-            $menu= Menu::find($id);
-            $menu->delete();
-            return redirect()->route('admin-menu-index')->with("successdelete",true);
-        }
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		$item->save();
+
+		return \Redirect::to('admin/menu');
 	}
 
+	public function postDelete()
+	{
+		$id = \Input::get('delete_id');
+		// Find all items with the parent_id of this one and reset the parent_id to zero
+		$items = Menu::where('parent_id', $id)->get()->each(function($item)
+		{
+			$item->parent_id = 0;  
+			$item->save();  
+		});
+
+		// Find and delete the item that the user requested to be deleted
+		$item = Menu::find($id);
+		$item->delete();
+
+		return $this->getIndex();
+	}
 }

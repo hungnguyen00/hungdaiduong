@@ -1,6 +1,13 @@
 @extends('layouts.plane')
 
 @section('body')
+
+@if (isset($menu_flg))
+    @section('script_extend')@stop
+@else
+    @section('script_extend')<script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>@stop
+@endif
+
  <div id="wrapper">
 
         <!-- Navigation -->

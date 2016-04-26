@@ -28,18 +28,21 @@ Route::group(['prefix' => 'admin'], function () {
 				'uses' => 'admin\ProductController@getEdit']);
 		Route::get('/products/edit/', ['as' => 'admin-product-edit',
 				'uses' => 'admin\ProductController@getCreate']);
-                Route::get('/menu', ['as' => 'admin-menu-index',
-				'uses' => 'admin\MenuController@index']);
-                Route::get('/menu/create', ['as' => 'admin-menu-create-get',
-				'uses' => 'admin\MenuController@beforeCreate']);
-                Route::post('/menu/create', ['as' => 'admin-menu-create-post',
-				'uses' => 'admin\MenuController@create']);
-                Route::get('/menu/edit/{id}', ['as' => 'admin-menu-bofore-edit',
-				'uses' => 'admin\MenuController@edit']);
-                 Route::post('/menu/edit', ['as' => 'admin-menu-edit',
-				'uses' => 'admin\MenuController@update']);
-                Route::get('/menu/delete/{id}', ['as' => 'admin-menu-delete',
-				'uses' => 'admin\MenuController@delete']);            
+		
+		// Routes for the menu admin
+		Route::group(array('prefix' => '/menu'), function()
+		{
+		    // Showing the admin for the menu builder and updating the order of menu items
+		    Route::get('/',['as' => 'admin-menu-index-get','uses' => 'admin\MenuController@getIndex']);
+		    Route::post('/',['as' => 'admin-menu-index-post','uses' => 'admin\MenuController@postIndex']);
+		
+		    Route::post('new',['as' => 'admin-menu-new-post','uses' => 'admin\MenuController@postNew']);
+		    Route::post('delete',['as' => 'admin-menu-delete-post','uses' => 'admin\MenuController@postDelete']);
+		
+		    Route::get('edit/{id}',['as' => 'admin-menu-edit-get','uses' => 'admin\MenuController@getEdit']);
+		    Route::post('edit/{id}',['as' => 'admin-menu-edit-post','uses' => 'admin\MenuController@postEdit']);
+		});
+		
 	});
 });
 
