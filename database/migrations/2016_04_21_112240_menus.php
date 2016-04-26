@@ -16,9 +16,11 @@ class Menus extends Migration {
                 Schema::create('menus', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name')->unique();
-			$table->string('description');
-                        $table->integer('location');
+			$table->integer('parent_id');
+			$table->string('label');
+			$table->string('url');
+			$table->integer('order');
+            $table->integer('location');
 			$table->timestamps();
 		});
 	}
