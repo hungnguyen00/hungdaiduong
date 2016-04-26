@@ -51,6 +51,12 @@ Route::group(['prefix' => 'admin'], function () {
 //Index
 Route::get('/', ['as' => 'front-top',
 				'uses' => 'front\IndexController@index']);
+//language
+Route::get('/language/{language}', function($language)
+{
+	$language === 'en' ? session(['language' => 'en']) : session(['language' => 'vi']);
+	return redirect()->back();
+});
 
 //About
 Route::get('/about', ['as' => 'about-index',
