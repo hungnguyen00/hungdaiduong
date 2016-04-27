@@ -52,7 +52,7 @@
                         <div class="breadcrumb-inner">
                             <ul class="list-inline list-unstyled">
                                 <li><a href="{{url('/')}}">Trang chủ</a></li>
-                                <li class="active">Women's</li>
+                                <li class="active">Hoa văn</li>
                             </ul>
                         </div>
                     </div>
