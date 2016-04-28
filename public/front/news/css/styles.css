@@ -1184,7 +1184,7 @@ a:hover .caption.light3 p,
 .block { margin:0 0 40px;}
 .block .block-title {line-height: 26px;position: relative;margin-bottom: 20px;font-size: 18px;clear: both;border-bottom: 1px solid #E4E4E4;text-transform: uppercase;padding-bottom: 10px;}
 .block .block-title strong {font-weight: 800;}
-.block .block-title strong span{}
+.block .block-title strong span{font-weight: bold;}
 .block .block-title a { text-decoration:none !important; }
 .block .block-subtitle { margin:0px 0 15px; padding:0; }
 .block .block-content {	/*padding: 20px 20px 40px;*/ font-size: 14px;}

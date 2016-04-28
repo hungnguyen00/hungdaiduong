@@ -87,19 +87,7 @@
                         <!--<div class="block-title">
                             <strong><span></span></strong>
                             </div>-->
-                        <div class="block-content">
-                            <div class="menu-recent view">
-                                <dt class="block-title"><strong><span>Recent Posts</span></strong></dt>
-                                <dd>
-                                    <ol>
-                                        <li><a href="http://www.peerforest.com/themes/rimbus/index.php/blog/the_new_fashion_from_paris_italian/">The new fashion from paris</a></li>
-                                        <li><a href="http://www.peerforest.com/themes/rimbus/index.php/blog/lookbook_for_september_2014_italian/">Lookbook for september 2014</a></li>
-                                        <li><a href="http://www.peerforest.com/themes/rimbus/index.php/blog/the_new_fashion_from_paris_italian_1/">The new fashion from paris</a></li>
-                                        <li><a href="http://www.peerforest.com/themes/rimbus/index.php/blog/lookbook_for_september_2014_italian_1/">Lookbook for september 2014</a></li>
-                                    </ol>
-                                </dd>
-                            </div>
-                        </div>
+                        @include('front.layout.news_list')
                     </div>
                 </div>
             </div>

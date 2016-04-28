@@ -57,7 +57,7 @@
 
 /* Style For Section Title & Page Title */
 .section-title > *,
-.page-title > *{font-weight: 800;font-family: 'Raleway', Helvetica, sans-serif;font-size: 20px;line-height: 26px;}
+.page-title > *{font-weight: bold;font-family: sans-serif;font-size: 20px;line-height: 26px;}
 
 .section-title h2{}
 .section-title.padd-right{padding-right: 80px;}

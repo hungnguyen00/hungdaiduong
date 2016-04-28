@@ -11244,7 +11244,7 @@ hr {
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
     margin-bottom: 30px;
-    font-family: Montserrat, sans-serif!important
+    font-family: sans-serif!important
 }
 @media (max-width: 767px) {
     .inner {
@@ -15428,7 +15428,7 @@ font-weight:400 .star-rating:before {
 }
 .sidebar .section-title {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: bold;
     text-transform: uppercase;
     color: #2c2b2b;
     border-bottom: 1px solid #ddd;
@@ -15593,9 +15593,10 @@ font-weight:400 .star-rating:before {
 }
 .sidebar .sidebar-filter ul>li a {
     color: #434343;
-    font-family: Montserrat, sans-serif;
+    font-family: sans-serif;
+    font-weight: bold;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     text-transform: capitalize;
     display: block;
     padding: 8px 0
