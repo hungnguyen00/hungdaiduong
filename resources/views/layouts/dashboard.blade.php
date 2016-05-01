@@ -50,7 +50,19 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*admin/menu') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('admin/menu') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Quản lý Menu</a>
+                            <a href="{{ url ('admin/menu') }}"><i class="fa fa-th-list fa-fw"></i> Quản lý Menu</a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li {{ (Request::is('*admin/category') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('admin/category') }}"><i class="fa fa-align-left fa-fw"></i> Quản lý danh mục sản phẩm</a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li {{ (Request::is('*admin/news') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('admin/news') }}"><i class="fa fa-flag fa-fw"></i> Quản lý tin tức</a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li {{ (Request::is('*admin/contact') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('admin/contact') }}"><i class="fa fa-comments fa-fw"></i> Quản lý liên hệ</a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>

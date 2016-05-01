@@ -109,24 +109,45 @@
                                     <div class="col-md-12">
                                         <form class="form-horizontal">
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Thẻ Meta Title <span class="asterisk">*</span>
+                                            <label class="col-sm-3 control-label">Meta Title(Việt)
                                             </label>
-                                            <div class="col-sm-7">
+                                            <div class="col-sm-6">
                                                 <input type="text" class="form-control" placeholder="Tối đa 100 ký tự...">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Thẻ Meta Description <span class="asterisk">*</span>
+                                            <label class="col-sm-3 control-label">Meta Title(Anh)
                                             </label>
-                                            <div class="col-sm-7">
-                                                <textarea rows="4" class="form-control" placeholder="Tối đa 255 ký tự..."></textarea>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" placeholder="Tối đa 100 ký tự...">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Thẻ Meta Keywords
+                                            <label class="col-sm-3 control-label">Meta Description(Việt)
                                             </label>
-                                            <div class="col-sm-7">
-                                                <textarea rows="6" class="form-control" placeholder="Tối đa 1000 ký tự..."></textarea>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" placeholder="Tối đa 1000 ký tự..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Description(Anh)
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" placeholder="Tối đa 1000 ký tự..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Keywords(Việt)
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="6" class="form-control" placeholder="Tối đa 200 ký tự..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Keywords(Anh)
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="6" class="form-control" placeholder="Tối đa 200 ký tự..."></textarea>
                                             </div>
                                         </div>
                                     </form>
