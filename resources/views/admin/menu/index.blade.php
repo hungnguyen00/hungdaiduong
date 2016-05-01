@@ -103,14 +103,21 @@ $(function() {
           </div>
           <div class="modal-body">
             <div class="form-group">
-                <label for="label" class="col-lg-2 control-label">Tiêu đề</label>
-                <div class="col-lg-10">
-                  {{ Form::text('label',null,array('class'=>'form-control'))}}
+                <label for="label" class="col-lg-3 control-label">Tiêu đề tiếng Việt</label>
+                <div class="col-lg-9">
+                  {{ Form::text('label_vi',null,array('class'=>'form-control'))}}
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="label" class="col-lg-3 control-label">Tiêu đề tiếng Anh</label>
+                <div class="col-lg-9">
+                  {{ Form::text('label_en',null,array('class'=>'form-control'))}}
                 </div>
             </div>
             <div class="form-group">
-                <label for="url" class="col-lg-2 control-label">URL</label>
-                <div class="col-lg-10">
+                <label for="url" class="col-lg-3 control-label">URL</label>
+                <div class="col-lg-9">
                   {{ Form::text('url',null,array('class'=>'form-control'))}}
                 </div>
             </div>

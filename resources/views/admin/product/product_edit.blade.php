@@ -40,21 +40,41 @@
                                     <div class="col-md-12">
                                         <form id="form1" class="form-horizontal">
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tên sản phẩm <span class="asterisk">*</span>
+                                            <label class="col-sm-2 control-label">Tên sản phẩm(Việt) <span class="asterisk">*</span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control" value="Product 1">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Mô tả chi tiết<span class="asterisk">*</span>
+                                            <label class="col-sm-2 control-label">Tên sản phẩm(Anh) <span class="asterisk">*</span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" value="Product 1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Mô tả chi tiết(Việt)<span class="asterisk">*</span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <textarea rows="6" class="form-control" placeholder="Chi tiết kỹ thuật"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Giới thiệu sản phẩm</label>
+                                            <label class="col-sm-2 control-label">Mô tả chi tiết(Anh)<span class="asterisk">*</span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <textarea rows="6" class="form-control" placeholder="Chi tiết kỹ thuật"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Giới thiệu sản phẩm(Việt)</label>
+                                            <div class="col-sm-7">
+                                                <textarea rows="4" class="form-control" placeholder="Tối đa 1000 ký tự..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Giới thiệu sản phẩm(Anh)</label>
                                             <div class="col-sm-7">
                                                 <textarea rows="4" class="form-control" placeholder="Tối đa 1000 ký tự..."></textarea>
                                             </div>
@@ -120,33 +140,23 @@
                                         <thead>
                                             <tr>
                                                 <th style="min-width:100px"><strong>Hình</strong>
-                                                </th><th style="min-width:150px"><strong>Tên hình</strong>
                                                 </th>
-                                                <th class="text-center"><strong>Xử lý</strong>
+                                                <th style="min-width:150px"><strong>Tên hình</strong>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td style="width:20%">
-                                                    <a href="assets/img/gallery/animal1.jpg" class="magnific" title="Nature 1">
-                                                        <img src="assets/img/gallery/animal1.jpg" alt="animal1" class="img-responsive">
+                                                    <a href="#" class="magnific" title="Nature 1">
+                                                        <img src="{{asset('/front/images/products/1.jpg')}}" alt="animal1" class="img-responsive">
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control m-t-10" value="Product 1 main image">
-                                                </td>
-                                                <td>
-                                                    <div class=" ui-radio"><input type="radio" name="product1-main" value="1" class="m-t-10" checked=""></div>
-                                                </td>
-                                                <td>
-                                                    <div class=" ui-radio"><input type="radio" name="product1-main" value="1" class="m-t-10"></div>
-                                                </td>
-                                                <td>
-                                                    <div class=" ui-radio"><input type="radio" name="product1-main" value="1" class="m-t-10"></div>
+                                                    <input type="text" class="form-control m-t-10" value="sản phẩm 1">
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="#" class="delete-img btn btn-sm btn-default m-t-10"><i class="fa fa-times-circle"></i> Remove</a>
+                                                    <a href="#" class="delete-img btn btn-sm btn-default m-t-10"><i class="fa fa-times-circle"></i> Xóa</a>
                                                 </td>
                                             </tr>
                                         </tbody>
