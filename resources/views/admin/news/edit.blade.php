@@ -43,7 +43,7 @@
                                     <div class="col-md-12 form-horizontal">
                                         <input  name="id" type="hidden" placeholder="" value="{{$news->id}}">
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tựa Đề Bài Viết<span class="asterisk">*</span>
+                                            <label class="col-sm-2 control-label">Tựa Đề (Việt)<span class="asterisk">*</span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control" name="title" placeholder="Tựa đề" value="{{$news->title}}"  @if ($errors->has('title')) autofocus @endif>
@@ -52,11 +52,28 @@
                                                 @endif
                                             </div>                                        
                                         </div>
+                                         <div class="form-group">
+                                            <label class="col-sm-2 control-label">Tựa Đề (Anh) <span class="asterisk">*</span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" name="title_en" value="{{$news->title_en}}" placeholder="Title News"  @if ($errors->has('title_en')) autofocus @endif>
+                                                       @if ($errors->has('title_en'))
+                                                       <p class="help-block">Title is not Empty</p>
+                                                @endif
+                                            </div>                                        
+                                        </div>                                       
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Nội Dung Bài Viết<span class="asterisk"></span>
+                                            <label class="col-sm-2 control-label">Nội Dung (Việt) <span class="asterisk"></span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <textarea rows="6" id="editor" class="form-control"  name="content" >{{$news->content}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Nội Dung (Anh) <span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <textarea rows="6" class="form-control" id="editor-en"  name="content_en">{{$news->content_en}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -75,22 +92,46 @@
                             <div class="tab-pane fade" id="news-en">
                                 <div class="row">
                                     <div class="col-md-12 form-horizontal">
-
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Title News<span class="asterisk">*</span>
+                                       <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta (Việt)<span class="asterisk">*</span>
                                             </label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control" name="title_en" value="{{$news->title_en}}" placeholder="Title News"  @if ($errors->has('title_en')) autofocus @endif>
-                                                       @if ($errors->has('title_en'))
-                                                       <p class="help-block">Title is not Empty</p>
-                                                @endif
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="meta" value="{{$news->meta}}" placeholder="Meta Tựa đề">                      
                                             </div>                                        
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Content News<span class="asterisk"></span>
+                                        <div class="form-group">                                        
+                                            <label class="col-sm-3 control-label">Meta (Anh)<span class="asterisk">*</span>
                                             </label>
-                                            <div class="col-sm-7">
-                                                <textarea rows="6" class="form-control" id="editor-en"  name="content_en">{{$news->content_en}}</textarea>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="meta_en" value="{{$news->meta_en}}" placeholder="Meta Tựa đề">                      
+                                            </div> 
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Description(Việt)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metadescript" placeholder="">{{$news->metadescript}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Description(Anh)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metadescript_en" placeholder="">{{$news->metadescript_en}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Keywords(Việt)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metakeyword" placeholder="">{{$news->metakeyword}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Keywords(Anh)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metakeyword_en" placeholder="">{{$news->metakeyword_en}}</textarea>
                                             </div>
                                         </div>
                                     </div>

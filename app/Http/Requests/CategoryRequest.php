@@ -23,7 +23,7 @@ class CategoryRequest extends Request {
 	{
 		return [
 			'name'=>'required',
-                        'menuid'=>'integer',
+                        'name_en'=>'required',
 		];
 	}
 

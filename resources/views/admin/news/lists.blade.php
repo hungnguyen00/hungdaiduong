@@ -13,14 +13,14 @@
 <div class="col-sm-12">
     <div class="panel panel-default">	  
         <div class="panel-heading">
-            <h3 class="panel-title">Danh Sách Danh Mục</h3>
+            <h3 class="panel-title">Danh Sách Tin Tức</h3>
         </div>		
         <div class="panel-body">
             <div class="row">  
                 <div class="col-sm-12">
                     <div class="m-b-20 clearfix">
                         <div class="pull-right">
-                            <a href="{{ url ('admin/news/create')}}" class="btn btn-success m-t-10"><i class="fa fa-plus p-r-10"></i> Thêm mới Bài Viết</a>
+                            <a href="{{ url ('admin/news/create')}}" class="btn btn-success m-t-10"><i class="fa fa-plus p-r-10"></i> Thêm mới Tin Tức</a>
                         </div>
                     </div>
                     <div class="row">
@@ -43,10 +43,10 @@
                             <table class="table table-hover table-bordered">
                                 <thead>
                                     <tr>
-                                         <th>Tựa Đề Bài Viết</th>
-                                        <th>Nội Dung</th>
-                                        <th>Title News</th>
-                                        <th>Content</th>
+                                         <th>Tựa Đề (Việt)</th>
+                                        <th>Nội Dung (Việt)</th>
+                                        <th>Tựa Đề (Anh)</th>
+                                        <th>Nội Dung (Anh) </th>
                                         <th style="width: 47px;">Sửa</th>
                                         <th style="width: 47px;">Xóa</th>
                                     </tr>

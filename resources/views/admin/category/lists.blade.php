@@ -43,10 +43,10 @@
                             <table class="table table-hover table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Tên Danh Mục</th>
-                                        <th>Chi Tiết</th>
-                                        <th>Name Category</th>
-                                        <th>Description</th>
+                                        <th>Tên(Việt)</th>
+                                        <th>Chi Tiết(Việt)</th>
+                                        <th>Tên (Anh)</th>
+                                        <th>Chi Tiết(Anh)</th>
                                         <th style="width: 47px;">Sửa</th>
                                         <th style="width: 47px;">Xóa</th>
                                     </tr>

@@ -27,7 +27,7 @@
         background-color: #fff;
         border: 1px solid #ddd;
         border-bottom-color: transparent;
-</style>
+    </style>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Tạo Mới Tin Tức</h3>
@@ -38,7 +38,7 @@
                     <div class="tabcordion">
                         <ul id="myTab" class="nav nav-tabs">
                             <li class="active"><a href="#news-vn" data-toggle="tab" aria-expanded="true">Tiếng Việt</a></li>
-                            <li class=""><a href="#news-en" data-toggle="tab">English</a></li>
+                            <li class=""><a href="#news-en" data-toggle="tab">SEO</a></li>
                             <li class=""><a href="#news-image" data-toggle="tab">Hình ảnh</a></li>
                         </ul>
                         {{Form::open(array('url' => 'admin/news/create', 'method' => 'post','files'=>true)) }} 
@@ -46,9 +46,8 @@
                             <div class="tab-pane fade active in" id="news-vn">
                                 <div class="row">
                                     <div class="col-md-12 form-horizontal">
-
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tựa Đề Bài Viết<span class="asterisk">*</span>
+                                            <label class="col-sm-2 control-label">Tựa Đề (Việt)<span class="asterisk">*</span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control" name="title" placeholder="Tựa đề"  @if ($errors->has('title')) autofocus @endif>
@@ -58,10 +57,27 @@
                                             </div>                                        
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Nội Dung Bài Viết<span class="asterisk"></span>
+                                            <label class="col-sm-2 control-label">Tựa Đề (Anh)<span class="asterisk">*</span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" name="title_en" placeholder="Title News"  @if ($errors->has('title_en')) autofocus @endif>
+                                                       @if ($errors->has('title_en'))
+                                                       <p class="help-block">Tựa đề không được để trống</p>
+                                                @endif
+                                            </div>                                        
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Nội Dung (Việt)<span class="asterisk"></span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <textarea rows="6" id="editor" class="form-control"  name="content" ></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Nội Dung (Anh)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <textarea rows="6" class="form-control" id="editor-en"  name="content_en"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -71,7 +87,7 @@
                                                 <input type="text" class="form-control" name="url" placeholder="Đường Dẫn URL"  @if ($errors->has('url')) autofocus @endif>
                                                        @if ($errors->has('url'))
                                                        <p class="help-block">Đường Dẫn không được để trống</p>
-                                                    @endif
+                                                @endif
                                             </div>                                        
                                         </div>
                                     </div>
@@ -80,22 +96,46 @@
                             <div class="tab-pane fade" id="news-en">
                                 <div class="row">
                                     <div class="col-md-12 form-horizontal">
-
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Title News<span class="asterisk">*</span>
+                                            <label class="col-sm-3 control-label">Meta (Việt)<span class="asterisk">*</span>
                                             </label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control" name="title_en" placeholder="Title News"  @if ($errors->has('title_en')) autofocus @endif>
-                                                       @if ($errors->has('title_en'))
-                                                       <p class="help-block">Title is not Empty</p>
-                                                @endif
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="meta" placeholder="Meta Tựa đề">                      
                                             </div>                                        
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Content News<span class="asterisk"></span>
+                                        <div class="form-group">                                        
+                                            <label class="col-sm-3 control-label">Meta (Anh)<span class="asterisk">*</span>
                                             </label>
-                                            <div class="col-sm-7">
-                                                <textarea rows="6" class="form-control" id="editor-en"  name="content_en"></textarea>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="meta_en" placeholder="Meta Tựa đề">                      
+                                            </div> 
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Description(Việt)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metadescript" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Description(Anh)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metadescript_en" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Keywords(Việt)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metakeyword" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Meta Keywords(Anh)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <textarea rows="4" class="form-control" name="metakeyword_en" placeholder=""></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -127,16 +167,16 @@
                         </div>
                         {{ Form::close() }}
                     </div>
-                    
+
                     <script type="text/javascript" src='{{ asset("js/jquery-2.2.3.js") }}'></script>
                     <script type="text/javascript" src='{{ asset("ckeditor/ckeditor.js") }}'></script>
                     <script type="text/javascript" src='{{ asset("fileinput/js/fileinput.js") }}'></script>
                     <script type="text/javascript">
-                            CKEDITOR.replace('editor');
-                            CKEDITOR.replace('editor-en');                                 
-                                $("#fileinput").fileinput({                                    
-                                    showUpload: false
-                                });
+                        CKEDITOR.replace('editor');
+                CKEDITOR.replace('editor-en');
+                $("#fileinput").fileinput({
+                showUpload: false
+                });
                     </script>
                 </div>
             </div>

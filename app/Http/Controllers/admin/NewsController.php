@@ -47,6 +47,12 @@ class NewsController extends Controller {
         $newsitem->content = e(addslashes($requests['content']));
         $newsitem->title_en = e(addslashes($requests['title_en']));
         $newsitem->content_en = e(addslashes($requests['content_en']));
+        $newsitem->meta = e(addslashes($requests['meta']));
+        $newsitem->meta_en = e(addslashes($requests['meta_en']));
+        $newsitem->metadescript = e(addslashes($requests['metadescript']));
+        $newsitem->metadescript_en = e(addslashes($requests['metadescript_en']));
+        $newsitem->metakeyword = e(addslashes($requests['metakeyword']));
+        $newsitem->metakeyword_en = e(addslashes($requests['metakeyword_en']));
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $fileName = $this->uploadPath . "/" . $this->getFileName($file);
@@ -105,6 +111,12 @@ class NewsController extends Controller {
                 $newsitem->content = e(addslashes($requests['content']));
                 $newsitem->title_en = e(addslashes($requests['title_en']));
                 $newsitem->content_en = e(addslashes($requests['content_en']));
+                $newsitem->meta = e(addslashes($requests['meta']));
+                $newsitem->meta_en = e(addslashes($requests['meta_en']));
+                $newsitem->metadescript = e(addslashes($requests['metadescript']));
+                $newsitem->metadescript_en = e(addslashes($requests['metadescript_en']));
+                $newsitem->metakeyword = e(addslashes($requests['metakeyword']));
+                $newsitem->metakeyword_en = e(addslashes($requests['metakeyword_en']));
                 if ($request->hasFile('image')) {
                     $file = $request->file('image');
                     $fileName = $this->uploadPath . "/" . $this->getFileName($file);

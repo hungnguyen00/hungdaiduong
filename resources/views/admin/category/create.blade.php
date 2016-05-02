@@ -26,7 +26,7 @@
         background-color: #fff;
         border: 1px solid #ddd;
         border-bottom-color: transparent;
-</style>
+    </style>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Tạo Mới Danh Mục</h3>
@@ -36,8 +36,7 @@
                 <div class="col-md-12">
                     <div class="tabcordion">
                         <ul id="myTab" class="nav nav-tabs">
-                            <li class="active"><a href="#product_general" data-toggle="tab" aria-expanded="true">Tiếng Việt</a></li>
-                            <li class=""><a href="#product_meta" data-toggle="tab">English</a></li>                            
+                            <li class="active"><a href="#product_general" data-toggle="tab" aria-expanded="true">Tổng Quan</a></li>                            
                         </ul>
                         {{Form::open(array('url' => 'admin/category/create', 'method' => 'post')) }} 
                         <div id="myTabContent" class="tab-content">                           
@@ -46,20 +45,37 @@
                                     <div class="col-md-12 form-horizontal">
 
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tên Danh Mục <span class="asterisk">*</span>
+                                            <label class="col-sm-2 control-label">Tên(Việt) <span class="asterisk">*</span>
                                             </label>
-                                            <div class="col-sm-7">
+                                            <div class="col-sm-7  @if ($errors->has('name')) has-error @endif">
                                                 <input type="text" class="form-control" name="name" placeholder="Tên Danh Mục"  @if ($errors->has('name')) autofocus @endif>
                                                        @if ($errors->has('name'))
-                                                       <p class="help-block">Tên Danh Mục không được để trống</p>
+                                                       <label class="control-label" for="inputError">{{$errors->first('name')}}</label>
                                                 @endif
                                             </div>                                        
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Mô tả chi tiết<span class="asterisk"></span>
+                                            <label class="col-sm-2 control-label">Tên(Anh) <span class="asterisk">*</span>
+                                            </label>
+                                            <div class="col-sm-7  @if ($errors->has('name_en')) has-error @endif">
+                                                <input type="text" class="form-control" name="name_en" placeholder="Name Category"  @if ($errors->has('name_en')) id="inputError" autofocus @endif>
+                                                       @if ($errors->has('name_en'))
+                                                       <label class="control-label" for="inputError">{{$errors->first('name_en')}}</label>
+                                                @endif
+                                            </div>                                        
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Chi Tiết(Việt)<span class="asterisk"></span>
                                             </label>
                                             <div class="col-sm-7">
                                                 <textarea rows="6" class="form-control"  name="description" placeholder="Mô tả Chi tiết"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Chi Tiết(Anh)<span class="asterisk"></span>
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <textarea rows="6" class="form-control"  name="description_en" placeholder="Description"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -69,36 +85,12 @@
                                                 <input type="text" class="form-control" name="url" placeholder="Đường Dẫn URL"  @if ($errors->has('url')) autofocus @endif>
                                                        @if ($errors->has('url'))
                                                        <p class="help-block">Đường Dẫn không được để trống</p>
-                                                    @endif
-                                            </div>                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="product_meta">
-                                <div class="row">
-                                    <div class="col-md-12 form-horizontal">
-
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Name Category<span class="asterisk">*</span>
-                                            </label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control" name="name_en" placeholder="Name Category"  @if ($errors->has('name_en')) autofocus @endif>
-                                                       @if ($errors->has('name_en'))
-                                                       <p class="help-block">Name Category is not Empty</p>
                                                 @endif
                                             </div>                                        
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Description<span class="asterisk"></span>
-                                            </label>
-                                            <div class="col-sm-7">
-                                                <textarea rows="6" class="form-control"  name="description_en" placeholder="Description"></textarea>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                           
                             <div class="row">
                                 <div class="col-md-12 m-t-20 m-b-40 align-center">
                                     <a href="" class="btn btn-default m-r-10 m-t-10"><i class="fa fa-reply"></i> Hủy</a> 
